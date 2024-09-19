@@ -25,7 +25,7 @@ import { Icon } from "astro-icon/components";
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="/contact"
+        href={import.meta.env.BASE_URL + "/contact"}
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         <Icon class="text-white w-5 h-5" name="bx:bxs-envelope" />
@@ -35,7 +35,7 @@ import { Icon } from "astro-icon/components";
         size="lg"
         style="outline"
         rel="noopener"
-        href="/about"
+        href={import.meta.env.BASE_URL + "/about"}
         class="flex gap-1 items-center justify-center">
         <Icon class="text-black w-4 h-4" name="bx:bxs-user" />
         About Us
