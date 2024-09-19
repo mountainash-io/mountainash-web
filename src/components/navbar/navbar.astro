@@ -28,12 +28,14 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg flex items-center">
-          <img src={import.meta.env.BASE_URL + "/images/ma-logo-bgreen.png"} alt="MountainAsh Logo" class="h-8 w-auto mr-3" />
-          <span class="font-bold text-slate-800">Mountain</span><span class="text-slate-500">Ash</span>
+        <a href="/" class="text-2xl md:text-3xl lg:text-4xl flex items-baseline  font-poppins">
+          <img src={import.meta.env.BASE_URL + "/images/ma-logo-bgreen.png"}
+                alt="MountainAsh Logo" 
+                class="h-8 w-auto mr-3 object-contain" />
+          <span class="font-medium text-white">Mountain</span><span class="font-light text-gray-300">Ash</span>
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-gray-200" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -53,7 +55,7 @@ const menuitems = [
                   <li>
                     <a
                       href={import.meta.env.BASE_URL + item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-gray-300 hover:text-white">
                       <span> {item.title}</span>
                     </a>
                   </li>
@@ -63,7 +65,9 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href={import.meta.env.BASE_URL + "/contact"} style="muted" block size="md">Contact Us</Link>
+          <Link size="lg" style="outline"
+                href={import.meta.env.BASE_URL + "/contact"} 
+                style="outline" size="md">Contact Us</Link>
         </div>
       </MenuItems>
     </Astronav>
@@ -74,3 +78,18 @@ const menuitems = [
     </div>
   </header>
 </Container>
+
+<style>
+  header {
+    background-color: #0C2F2B; /* Dark blue-gray color */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  /* You may need to adjust these styles based on your specific layout */
+  @media (max-width: 1024px) {
+    header {
+      border-radius: 0;
+    }
+  }
+</style>

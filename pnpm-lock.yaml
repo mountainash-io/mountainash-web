@@ -23,6 +23,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.0.18
         version: 5.0.18
+      '@fontsource/poppins':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@iconify-json/bx':
         specifier: ^1.1.10
         version: 1.1.10
@@ -389,6 +392,9 @@ packages:
 
   '@fontsource-variable/inter@5.0.18':
     resolution: {integrity: sha512-rJzSrtJ3b7djiGFvRuTe6stDfbYJGhdQSfn2SI2WfXviee7Er0yKAHE5u7FU7OWVQQQ1x3+cxdmx9NdiAkcrcA==}
+
+  '@fontsource/poppins@5.1.0':
+    resolution: {integrity: sha512-tpLXlnNi2fwQjiipvuj4uNFHCdoLA8izRsKdoexZuEzjx0r/g1aKLf4ta6lFgF7L+/+AFdmaXFlUwwvmDzYH+g==}
 
   '@iconify-json/bx@1.1.10':
     resolution: {integrity: sha512-4JzMDYhs/hkU9mO8nNMNKZwHn706oQaD46URyUuD4fP/XAWGf01vg6wKITmQseEHsHDrtKAXjwcumfnTUDi3OQ==}
@@ -3082,6 +3088,8 @@ snapshots:
   '@fontsource-variable/bricolage-grotesque@5.0.6': {}
 
   '@fontsource-variable/inter@5.0.18': {}
+
+  '@fontsource/poppins@5.1.0': {}
 
   '@iconify-json/bx@1.1.10':
     dependencies:

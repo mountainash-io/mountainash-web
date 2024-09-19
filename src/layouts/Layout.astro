@@ -5,7 +5,16 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
-
+// Add this line to import Poppins font
+import '@fontsource/poppins/100.css';  // Thin
+import '@fontsource/poppins/200.css';  // Extra Light
+import '@fontsource/poppins/300.css';  // Light
+import '@fontsource/poppins/400.css';  // Regular
+import '@fontsource/poppins/500.css';  // Medium
+import '@fontsource/poppins/600.css';  // Semi Bold
+import '@fontsource/poppins/700.css';  // Bold
+import '@fontsource/poppins/800.css';  // Extra Bold
+import '@fontsource/poppins/900.css';  // Black
 
 export interface Props {
   title: string;
@@ -55,6 +64,12 @@ const makeTitle = title
         },
       }}
     />
+    <!-- Add this style tag -->
+    <style is:global>
+      .font-poppins {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>    
   </head>
   <body>
     <Navbar />
