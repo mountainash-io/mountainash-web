@@ -28,7 +28,7 @@ jobs:
 
       - name: Create Build Command
         run: |
-            if [ "$GITHUB_REF_NAME" = "main" ]; then
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
             echo "BUILD_COMMAND=pnpm run build -- --base /${{ env.ORGNAME }} >> $GITHUB_ENV"
           else
             echo "BUILD_COMMAND=pnpm run build -- --base /${{ env.ORGNAME }}/${{ env.GITHUB_REF_NAME }} >> $GITHUB_ENV"
