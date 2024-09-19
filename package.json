@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "dev:branch": "GITHUB_REF_NAME=$(git rev-parse --abbrev-ref HEAD) astro dev"    
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.1",

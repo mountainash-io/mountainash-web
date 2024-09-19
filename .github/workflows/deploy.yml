@@ -27,7 +27,9 @@ jobs:
           # path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
+          build-command: npm run build -- --base /${{ github.event.repository.name }}/${{ github.ref_name }}
+        env:
+        GITHUB_REF_NAME: ${{ github.ref_name }}
 
   deploy:
     needs: build
@@ -39,3 +41,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          path: ./dist        
