@@ -1,0 +1,56 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const teamMembers = [
+  {
+    name: "Margot Kilgour",
+    title: "Commercial Lead",
+    bio: "Regional Regulatory Policy for Australia, Operations/Marketing and Startup Experience",
+    email: "margot@mountainash.io"
+  },
+  {
+    name: "Nathaniel Ramm",
+    title: "Technology Lead",
+    bio: "Experienced with IT & Data Science Solutions in Financial Services",
+    email: "nathaniel@mountainash.io"
+  },
+  {
+    name: "Rowan Coxhead",
+    title: "Business Lead",
+    bio: "Senior Project & Stakeholder Management in Financial Services",
+    email: "rowan@mountainash.io"
+  }
+];
+---
+
+<Layout title="About MountainAsh">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About Us</Fragment>
+      <Fragment slot="desc">Empowering the financial industry with innovative CCR solutions.</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Revolutionizing Comprehensive Credit Reporting
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        At MountainAsh, we're dedicated to providing innovative, portable, and modular solutions for Comprehensive Credit Reporting (CCR) in the financial services industry. Our team brings diverse expertise to tackle the complex challenges of CCR data management.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {teamMembers.map((member) => (
+        <div class="group">
+          <div class="mt-4">
+            <h2 class="text-lg text-gray-800">{member.name}</h2>
+            <h3 class="text-sm text-slate-500">{member.title}</h3>
+            <p class="text-sm text-slate-600 mt-2">{member.bio}</p>
+            <a href={`mailto:${member.email}`} class="text-sm text-blue-500 hover:underline">{member.email}</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Layout>

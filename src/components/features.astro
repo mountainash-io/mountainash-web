@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Innovative Solution",
+    description:
+      "Our end-to-end solution addresses the complex challenges of Comprehensive Credit Reporting (CCR) data management.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Portable & Modular",
+    description:
+      "Flexible deployment options to suit your needs, from self-managed infrastructure to cloud marketplaces.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Regulatory Compliance",
+    description:
+      "Stay compliant with evolving CCR regulations and OAIC guidelines, reducing costs for smaller lenders.",
+    icon: "bx:bxs-shield",
+  },
+  {
+    title: "Scalable Architecture",
+    description:
+      "Our solution grows with your business, from manual use-cases to production-ready deployments.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Expert Team",
+    description:
+      "Led by industry professionals with deep experience in financial services, regulatory policy, and technology.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Future-Proof",
+    description:
+      "Prepared for future expansion into APRA data reporting and international markets like NZ, Canada, and Europe.",
+    icon: "bx:bxs-rocket",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Empowering Financial Services with CCR Data Solutions
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    MountainAsh provides a comprehensive suite of features designed to streamline CCR data management and ensure regulatory compliance.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

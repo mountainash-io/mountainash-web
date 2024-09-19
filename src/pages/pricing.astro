@@ -1,0 +1,68 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const productOptions = [
+  {
+    name: "Just the Package",
+    price: "Custom",
+    popular: false,
+    features: [
+      "Runs anywhere",
+      "Enables manual use-cases",
+      "Self-managed deployment and infrastructure",
+    ],
+    button: {
+      text: "Contact Us",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Off the Shelf",
+    price: "Custom",
+    popular: true,
+    features: [
+      "Prepackaged Container Deployment",
+      "Cloud Marketplaces",
+      "Production Ready",
+      "Self-managed Infrastructure",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "SaaS (Future)",
+    price: "Coming Soon",
+    popular: false,
+    features: [
+      "Centralised deployment",
+      "Managed infrastructure",
+      "Scalable solution",
+      "Regular updates and support",
+    ],
+    button: {
+      text: "Learn More",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Product Options">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Product Options</Fragment>
+      <Fragment slot="desc">
+        Flexible solutions tailored to your CCR data needs
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {productOptions.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
