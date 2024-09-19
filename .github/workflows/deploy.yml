@@ -15,75 +15,22 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: 'npm'
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install dependencies - ci
-        run: npm ci        
-
-      - name: Build with Next.js
-        run: npm run build
-
-      - name: Static HTML export with Next.js
-        run: npm run export
-
-      - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          
-          # Fetch all branches
-          git fetch --all
-          
-          # Switch to gh-pages branch, creating it if it doesn't exist
-          git checkout gh-pages || git checkout --orphan gh-pages
-          
-          # Remove all files except .git
-          git rm -rf .
-          git clean -fxd
-          
-          # Copy the built files to a folder named after the branch
-          mkdir -p ${GITHUB_REF##*/}
-          cp -R out/* ${GITHUB_REF##*/}/
-          
-          # Add and commit changes
-          git add .
-          git commit -m "Deploy ${GITHUB_REF##*/} to GitHub Pages"
-          
-          # Push changes
-          git push origin gh-pages
-          
-          # Clean up deployments for deleted branches
-          echo "Cleaning up deployments for deleted branches..."
-          for dir in */; do
-            branch=${dir%/}
-            if [ "$branch" != "CNAME" ] && ! git ls-remote --exit-code --heads origin "$branch" > /dev/null 2>&1; then
-              echo "Removing deployment for deleted branch: $branch"
-              git rm -rf "$dir"
-              git commit -m "Remove deployment for deleted branch: $branch"
-            fi
-          done
-          
-          # Push cleanup changes
-          git push origin gh-pages
-
-      - name: Update GitHub Pages source
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api --method PUT /repos/${{ github.repository }}/pages \
-            -f source='{"branch":"gh-pages","path":"/"}'
+  build:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
