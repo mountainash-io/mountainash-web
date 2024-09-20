@@ -14,25 +14,23 @@ This repository contains the source code for the MountainAsh website, built usin
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+To get started with this project on github codespaces, follow these steps:
 
-1. Clone the repository:
+1. Open Codespaces on Github:
    ```
-   git clone https://github.com/mountainash-io/mountainash-web.git
-   cd mountainash-web
-   ```
-
-2. Install dependencies:
-   ```
-   pnpm install
+   Click on the green '<> Code' button
+   Select the Codespaces tab
+   Click 'Create codespace on main'
    ```
 
-3. Start the development server:
+2. Codespaces will start in your browser.
+It should automatically this is a node project and install dependencies
+
+3. Start the development web server to see a live view of the website:
    ```
-   pnpm run dev
+   npm run dev
    ```
 
-4. Open your browser and visit `http://localhost:3000` to see the website.
 
 ## Development
 
