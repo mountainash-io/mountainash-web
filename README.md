@@ -12,25 +12,44 @@ This repository contains the source code for the MountainAsh website, built usin
 - [Troubleshooting](#troubleshooting)
 - [Resources](#resources)
 
-## Getting Started
+## Getting Started - Github Codespaces
 
 To get started with this project on github codespaces, follow these steps:
+1. Login to Github
 
-1. Open Codespaces on Github:
-   ```
-   Click on the green '<> Code' button
-   Select the Codespaces tab
-   Click 'Create codespace on main'
-   ```
+2. Open Codespaces:
+- Click on the green '<> Code' button
+- Select the Codespaces tab
+- Click 'Create codespace on main'
 
-2. Codespaces will start in your browser.
-It should automatically this is a node project and install dependencies
+3. Codespaces will start in your browser.
+It should automatically detect that this is a node project and install dependencies
 
-3. Start the development web server to see a live view of the website:
-   ```
-   npm run dev
-   ```
+3. Open a terminal, and start the development web server to see a live view of the website:
+```
+npm ci
+npm run dev
+```
 
+## Getting Started - Local VSCode
+
+This will be a little more involved, as it will require the installation of node and astro
+
+1. Install node ecosystem dependencies
+On a mac or linux, open a terminal.
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install 18
+npm install --save-dev astro
+```
+
+2. Install Project dependencies
+
+On a mac or linux, open a terminal and go to the project root.
+```
+npm ci
+```
 
 ## Development
 
@@ -42,7 +61,6 @@ It should automatically this is a node project and install dependencies
 ### Branch-specific Development
 
 To test branch-specific builds locally:
-
 ```
 pnpm run dev:branch
 ```
