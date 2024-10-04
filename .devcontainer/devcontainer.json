@@ -1,6 +1,6 @@
 {
   "name": "MountainAsh - Web",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
@@ -9,17 +9,19 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
-        "christian-kohler.npm-intellisense"
-      ],
+        "christian-kohler.npm-intellisense",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ], 
       "settings": {
-        // "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python" 
+        // "editor.formatOnSave": true,
+        // "editor.defaultFormatter": "esbenp.prettier-vscode"
       }
     }
   },
-  "postCreateCommand": "nvm install 20 && npm install -g pnpm && pnpm install",
-  "remoteUser": "vscode",
+  "postCreateCommand": "npm install -g pnpm && pnpm install",
+  "remoteUser": "node",
   "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
   ]
 }
- 
