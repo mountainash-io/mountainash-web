@@ -21,11 +21,18 @@ To get started with this project on github codespaces, follow these steps:
 - Click on the green '<> Code' button -> Codespaces tab -> 'Create codespace on main'
 
 3. Codespaces will start in your browser.
-It should automatically detect that this is a node project and install dependencies
+It should automatically detect that this is a node project and install dependencies.
+If `pnpm` does not run in the terminal, run the following:
+```
+nvm install 20
+npm install -g pnpm
+pnpm install
+```
+
 
 3. Once the codespace is set up, start the development web server to see a live view of the website:
 ```
-npm run dev
+pnpm run dev
 ```
 
 You may need to click on the link to '/mountainash-web'
@@ -39,18 +46,19 @@ On a mac or linux, open a terminal.
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-nvm install 18
+nvm install 20
+npm install -g pnpm
 ```
 
 2. Install Project dependencies
 On a mac or linux, open a terminal and go to the project root.
 ```
-npm ci
+pnpm install
 ```
 
 3. Run Dev server
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Development
