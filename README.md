@@ -18,18 +18,17 @@ To get started with this project on github codespaces, follow these steps:
 1. Login to Github
 
 2. Open Codespaces:
-- Click on the green '<> Code' button
-- Select the Codespaces tab
-- Click 'Create codespace on main'
+- Click on the green '<> Code' button -> Codespaces tab -> 'Create codespace on main'
 
 3. Codespaces will start in your browser.
 It should automatically detect that this is a node project and install dependencies
 
-3. Open a terminal, and start the development web server to see a live view of the website:
+3. Once the codespace is set up, start the development web server to see a live view of the website:
 ```
-npm ci
 npm run dev
 ```
+
+You may need to click on the link to '/mountainash-web'
 
 ## Getting Started - Local VSCode
 
@@ -41,14 +40,17 @@ On a mac or linux, open a terminal.
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 nvm install 18
-npm install --save-dev astro
 ```
 
 2. Install Project dependencies
-
 On a mac or linux, open a terminal and go to the project root.
 ```
 npm ci
+```
+
+3. Run Dev server
+```
+npm run dev
 ```
 
 ## Development
@@ -58,12 +60,6 @@ npm ci
 - Components can be found and added in the `/src/components` directory.
 - Styles are managed using Tailwind CSS. The configuration file is `tailwind.config.cjs`.
 
-### Branch-specific Development
-
-To test branch-specific builds locally:
-```
-pnpm run dev:branch
-```
 
 This command sets the `GITHUB_REF_NAME` to your current git branch name.
 
