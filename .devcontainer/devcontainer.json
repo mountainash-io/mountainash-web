@@ -16,7 +16,7 @@
       }
     }
   },
-  "postCreateCommand": "nvm install 18 & npm ci",
+  "postCreateCommand": "nvm install 20 && npm install -g pnpm && pnpm install",
   "remoteUser": "vscode",
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
