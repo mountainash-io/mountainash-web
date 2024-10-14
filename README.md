@@ -17,8 +17,7 @@ This repository contains the source code for the MountainAsh website, built usin
 To get started with this project on github codespaces, follow these steps:
 1. Login to Github
 
-2. Open Codespaces:
-- Click on the green '<> Code' button -> Codespaces tab -> 'Create codespace on main'
+2. Open Codespaces ( Green '<> Code' button -> Codespaces tab -> 'Create codespace on main' ) 
 
 3. Codespaces will start in your browser.
 It should automatically detect that this is a node project and install dependencies.
