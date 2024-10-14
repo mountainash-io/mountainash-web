@@ -22,20 +22,19 @@ To get started with this project on github codespaces, follow these steps:
 
 3. Codespaces will start in your browser.
 It should automatically detect that this is a node project and install dependencies.
-If `pnpm` does not run in the terminal, run the following:
+Try running `pnpm run dev`. If this does not run, run the following to install all dependecies:
 ```
 nvm install 20
 npm install -g pnpm
 pnpm install
 ```
 
-
-3. Once the codespace is set up, start the development web server to see a live view of the website:
+4. Once the codespace is set up, and dependencies are installed, run the following to start the development web server and see a live view of the website:
 ```
 pnpm run dev
 ```
 
-You may need to click on the link to '/mountainash-web'
+When the dev website launches you may need to click on the link to '/mountainash-web'
 
 ## Getting Started - Local VSCode
 
